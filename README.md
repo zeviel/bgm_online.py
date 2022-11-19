@@ -1,10 +1,10 @@
 # bgmonline.py
-Mobile-API for [backgammononline](https://play.google.com/store/apps/details?id=com.rstgames.backgammon) mobile game
+Mobile-API for [BackgammonOnline](https://play.google.com/store/apps/details?id=com.rstgames.backgammon) mobile game
 
 ## Example
 ```python3
 # Login
-import bgmonline
-bgmclient = bgmonline.BackgammonClient(token="")
-print(f"-- Account user_id is::: {bgmclient.user_id}")
+import bgm_online
+bgm_online = bgm_online.BackgammonOnline()
+bgm_online.login_with_access_token(access_token="")
 ```
