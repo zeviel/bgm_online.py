@@ -45,7 +45,7 @@ class BackgammonOnline:
 
 	def receive_server_response(
 			self,
-			unmarshal: bool = False) -> [str, dict]:
+			unmarshal: bool = False) -> str | dict:
 		if unmarshal:
 			return self.unmarshal(self.socket.recv(4096).decode())
 		else:
@@ -81,7 +81,7 @@ class BackgammonOnline:
 		data = self.receive_server_response()
 		return self.unmarshal(data)[0]["key"]
 
-	def sign(self, session_key: int) -> str:
+	def sign(self, session_key: int) -> None:
 		hash = b64encode(md5(
 			(f"{session_key}oc3q7ingf978mx457fgk4587fg847").encode()).digest()).decode()
 		self.send_server({"hash": hash, "command": "sign"})
