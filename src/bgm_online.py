@@ -30,7 +30,7 @@ class BackgammonOnline:
 		)
 		self.sign(self.get_session_key())
 
-	def create_connection(self) -> str:
+	def create_connection(self) -> None:
 		self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		self.socket.connect(("88.99.34.73", 11771))
 		self.logger.info(f"Connected to the server!")
